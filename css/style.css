@@ -5,59 +5,91 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #f4f4f4;
+  text-decoration: none;
+  outline: none;
+  scroll-behavior: smooth;
+
 }
 
 /* Header */
 header {
-  background-color: rgb(2, 65, 58);
-  padding: 20px;
+  background-color: rgba(63, 63, 64, 0.73);
   text-align: center;
-  color: white;
+  color: #131111;
+  text-shadow:
+    0 0 10px rgba(63, 63, 64, 0.73),
+    0 0 20px #3f3f40,
+    0 0 30px rgba(63, 63, 64, 0.73),
+    0 0 40px #131111;
+  animation: neonGlow 1.5s ease-in-out infinite alternate;
+  font-family: 'Georgia', serif;
+
 }
 
-/* Header başlık stilini küçültme */
 header h1 {
-  font-size: 2rem;  /* Header'daki ana başlık için küçük boyut */
-  font-weight: bold; /* Kalınlık */
+  font-size: 1.8rem; /* Başlığı küçültme */
+  font-weight: bold;
+  margin: 0; /* Boşlukları kaldır */
+  padding: 10px; /* Dar padding */
+
+
 }
 
 header h2 {
-  font-size: 1.6rem; /* İkinci başlık için küçük boyut */
-  font-weight: normal; /* Daha ince yazı */
+  font-size: 1.4rem; /* Alt başlık daha küçük */
+  font-weight: normal;
+  margin: 0; /* Boşlukları kaldır */
+  padding: 5px; /* Dar padding */
 }
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #28a745;
+  text-align: left;
+  background-color: #544444;
   color: white;
-}
-
-/* Container: Bütçe, Yemek ve Ne Giysem seçimi */
-.container, .container2, .container3 {
-  padding: 20px;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 8px;
+  padding: 1px;
   margin: 0;
+  font-family: 'Georgia', serif;
 }
 
 /* Container 1: Bütçe seçimi */
 .container {
   background-color: rgba(63, 63, 64, 0.73);
+  padding: 20px;
+  margin: 0; /* Boşluk kaldırıldı */
+  text-align: center;
+  font-family: 'Georgia', serif; /* Serif yazı tipi */
+  font-size: 1rem; /* Büyük boyut */
+  font-weight: bold; /* Kalın yazı */
+  color: #251818; /* Beyaz renk */
+
 }
 
 /* Container 2: Yemek seçimi */
 .container2 {
-  background-color: rgba(247, 8, 0, 0.24);
+  background-color: rgb(84, 68, 68);
+  padding: 20px;
+  margin: 0; /* Boşluk kaldırıldı */
+  text-align: center;
+  font-family: 'Georgia', serif; /* Serif yazı tipi */
+  font-size: 1rem; /* Büyük boyut */
+  font-weight: bold; /* Kalın yazı */
+  color: white; /* Beyaz renk */
 }
 
 /* Container 3: Ne Giysem */
 .container3 {
-  background-color: rgba(0, 247, 202, 0.24);
+  background-color: rgb(63,63,64,0.73);
+  padding: 20px;
+  margin: 0; /* Boşluk kaldırıldı */
+  text-align: center;
+  font-family: 'Georgia', serif; /* Serif yazı tipi */
+  font-size: 1rem; /* Büyük boyut */
+  font-weight: bold; /* Kalın yazı */
+  color: black; /* Beyaz renk */
 }
 
+/* Genel buton stili */
 button {
   padding: 15px 30px;
   font-size: 1.2rem;
@@ -67,25 +99,14 @@ button {
   color: #410203;
   cursor: pointer;
   margin: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  background-color: #28a745;
 }
 
 button:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
-}
-
-button.selected {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-}
-
-/* Seçenekler içindeki metin */
-button {
-  background-color: #28a745;
-}
-
-button:hover {
   background-color: #218838;
 }
 
@@ -93,15 +114,7 @@ button.selected {
   background-color: #155d27;
 }
 
-/* Ne giysem kısmı */
-.container3 h2 {
-  margin-bottom: 10px;
-}
-
-.container3 h3 {
-  margin-top: 20px;
-}
-
+/* Seçenekler içindeki metin */
 select {
   padding: 12px 20px;
   font-size: 1.1rem;
@@ -125,21 +138,22 @@ select:hover {
   margin-top: 10px;
 }
 
-/* Cevap kutularını stilize et */
+/* Cevap kutuları */
 .result {
   margin-top: 20px;
   font-size: 1.2rem;
   font-weight: 600;
   color: #333;
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   border: 2px solid #28a745;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.5s ease-in-out;
+
 }
 
-/* Animasyon: Cevap kutusunun görünür hale gelmesi */
+/* Animasyon */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -150,17 +164,70 @@ select:hover {
     transform: translateY(0);
   }
 }
+/* Genel stiller */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  text-decoration: none;
+  outline: none;
+  scroll-behavior: smooth;
+}
 
-.button-group {
+/* Çark Konteyneri */
+.wheel-container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0px;
+  position: relative;
+  background-color: rgb(84, 68, 68);
+  font-family: 'Georgia', serif; /* Serif yazı tipi */
+  font-size: 1rem; /* Büyük boyut */
+  font-weight: bold; /* Kalın yazı */
+  color: white; /* Beyaz renk */
 }
 
-.container, .container2, .container3 {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+#wheel {
+  border-radius: 50%;
+  border: 10px solid #131111; /* Çarkın etrafını saran şık bir border */
+  background-image: conic-gradient(#ff6347, #ff7f50, #ff6347, #ff7f50, #ff6347); /* Çark dilimlerinin renkli geçişleri */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Çarkın alt kısmında gölge efekti */
+  animation: spin 3s ease-out forwards;
 }
 
-button {
+/* Çarkın Dönme Animasyonu */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg); /* Çarkın tam dönüşünü sağlıyoruz */
+  }
+}
+
+/* Buton */
+#spinButton {
+  margin-top: 20px;
+  padding: 15px 40px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #131111;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#spinButton:hover {
+  background-color: #218838;
+  transform: translateY(-3px); /* Hover efektiyle buton yukarıya kayacak */
+}
+
+#spinButton:active {
+  transform: translateY(1px); /* Tıklama anında buton hafifçe aşağıya kayacak */
 }
